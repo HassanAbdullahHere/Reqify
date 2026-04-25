@@ -216,3 +216,7 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Reqify generated output
+summary.json
+*_requirements.txt
