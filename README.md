@@ -63,6 +63,15 @@ You: I need an app for a toy shop to manage inventory and online orders...
 - **Auto-save** — requirements are written to a `.txt` file automatically after each response
 - **Iterative refinement** — provide more info and Reqify updates the requirements file
 
+## How it works
+
+1. **Input** — you type a client brief at the prompt
+2. **History build** — your message is appended to a running conversation history sent to Gemini on every turn, giving the model full context
+3. **Generation** — Gemini 2.5 Flash processes the brief against a fixed system prompt that enforces the output structure
+4. **Tool call** — the model calls the `save_requirements` tool with the formatted output; Reqify intercepts this, writes the `.txt` file, and prints the result
+5. **Rolling summary** — every 2 exchanges the full history is compressed into a ~150-word snapshot via a second Gemini call and saved to `summary.json`; the in-memory history is replaced with this summary to keep token usage low
+6. **Resume** — on next launch, if `summary.json` exists, Reqify injects the snapshot as context so the conversation continues where it left off
+
 ## Stack
 
 - [Google Gemini 2.5 Flash](https://deepmind.google/technologies/gemini/) via `google-genai`
