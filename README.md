@@ -1,6 +1,7 @@
 # Reqify
 
-A CLI tool that turns client briefs into structured software requirements using Google Gemini.
+A CLI tool that turns client briefs into structured software requirements.
+Powered by Google Gemini.
 
 ## What it does
 
