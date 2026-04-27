@@ -68,12 +68,6 @@ LOADING_FRAMES = [
     "⚡ Zapping neurons...",
     "🌀 Untangling requirements...",
     "🔮 Reading the crystal spec...",
-    "🚀 Launching brain cells...",
-    "🎲 Rolling the dice of logic...",
-    "🤯 Having a mild epiphany...",
-    "🧬 Mutating your brief...",
-    "💡 Stealing ideas from the ether...",
-    "🐙 Eight arms working at once...",
 ]
 
 def loading_spinner(stop_event):
